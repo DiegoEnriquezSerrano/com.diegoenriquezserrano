@@ -1,0 +1,18 @@
+FROM node:22-bullseye
+
+ENV NODE_ENV=development
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install --no-cache
+RUN npm install -D @swc/cli @swc/core
+
+COPY . .
+
+EXPOSE 3035
+
+ENV PORT 3035
+
+CMD ["npm", "run", "dev"]
