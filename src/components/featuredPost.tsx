@@ -1,9 +1,9 @@
 "use client";
 
-import {classes} from "@/utils";
-import type {PostType} from "@/types/PostTypes";
+import { classes } from "@/utils";
+import type { PostType } from "@/types/PostTypes";
 
-export function FeaturedPost(props: {post?: PostType}) {
+export function FeaturedPost(props: { post?: PostType }) {
   if (props.post) {
     return (
       <div className={containerClassName}>

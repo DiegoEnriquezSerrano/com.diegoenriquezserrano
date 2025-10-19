@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import {classes} from "@/utils";
-import {CategoryPill} from "./categoryPill";
-import type {PostType} from "@/types/PostTypes";
+import { classes } from "@/utils";
+import { CategoryPill } from "./categoryPill";
+import type { PostType } from "@/types/PostTypes";
 
 export function PostCard(
-  props: {post?: PostType; dashboard?: boolean} = {
+  props: { post?: PostType; dashboard?: boolean } = {
     post: undefined,
     dashboard: false,
-  }
+  },
 ) {
   const postLink = props.dashboard
     ? `/dashboard/posts/${props.post?.slug}`

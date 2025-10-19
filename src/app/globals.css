@@ -299,3 +299,72 @@ div#flash-message-container > [data-flash] {
   border-color: var(--color-green);
   color: var(--color-black);
 }
+
+section.markdown ul {
+  list-style-type: disc;
+  margin: var(--spacing-16) 0;
+  padding-left: var(--spacing-16);
+}
+
+section.markdown li {
+  display: list-item;
+}
+
+section.markdown h1 {
+  font-size: xx-large;
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+section.markdown h2 {
+  font-size: x-large;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
+section.markdown h3 {
+  font-size: larger;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+section.markdown h4 {
+  font-size: large;
+  font-weight: bold;
+  margin: 1.33em 0;
+}
+
+section.markdown h5 {
+  font-size: medium;
+  font-weight: bold;
+  margin: 1.67em 0;
+}
+
+section.markdown h6 {
+  font-size: small;
+  font-weight: bold;
+  margin: 2.33em 0;
+}
+
+section.markdown p {
+  margin: var(--spacing-16) 0;
+}
+
+section.markdown blockquote {
+  margin: var(--spacing-16) var(--spacing-32);
+}
+
+section.markdown pre {
+  font-family: monospace;
+  margin: var(--spacing-16) 0;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+section.markdown code {
+  font-family: monospace;
+}
+
+section.markdown a {
+  color: var(--color-cyan);
+}

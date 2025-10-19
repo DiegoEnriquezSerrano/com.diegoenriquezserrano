@@ -10,6 +10,7 @@ import ProjectService from "@/services/ProjectService";
 
 // types
 import type { ProjectType } from "@/types/ProjectTypes";
+import Markdown from "react-markdown";
 
 export default async function ProjectsPage({
   params,
@@ -68,10 +69,10 @@ export default async function ProjectsPage({
           />
         </figure>
         <section
-          className="flex-column align-items-center justify-content-start full-width squeeze-24 white-space-pre-line line-height-large stack-64"
+          className="markdown flex-column align-items-stretch justify-content-start full-width squeeze-24 white-space-pre-line line-height-large stack-64"
           style={{ maxWidth: 800 }}
         >
-          {project?.body}
+          <Markdown>{project?.body}</Markdown>
         </section>
       </main>
     </BaseLayoutPageWrapper>

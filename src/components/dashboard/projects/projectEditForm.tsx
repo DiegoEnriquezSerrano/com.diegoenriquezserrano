@@ -7,6 +7,7 @@ import ProjectService from "@/services/ProjectService";
 import RadioGroup from "@/components/form/radioGroup";
 import CommaSeparatedValueInput from "@/components/form/csvInput";
 import type { ProjectType } from "@/types/ProjectTypes";
+import ExpandingTextarea from "@/components/form/expandingTextarea";
 
 const { updateDashboardProject, prepareCreateParams } = ProjectService.Api;
 
@@ -117,25 +118,13 @@ export default function ProjectEditForm({ project }: { project: ProjectType }) {
           }}
         />
       </fieldset>
-      <fieldset
-        id="body-field"
-        className="flex-column gap-8 squeeze-16 squish-0 full-width"
-      >
-        <label htmlFor="body">Body</label>
-        <textarea
-          className={inputClassName}
-          id="body"
-          name="body"
-          placeholder="Urban green spaces have become essential components of healthy cities, offering a multifaceted response to challenges such as air pollution, urban heat islands, and social fragmentation. Trees and shrubs in parks and along streets play a critical role in trapping particulate matter and absorbing gaseous pollutants, thereby improving air quality and reducing respiratory ailments among city dwellers. Moreover, vegetation cools urban areas through shade and evapotranspiration, lowering energy demands for air conditioning and mitigating heat-related health risks."
-          required
-          style={{ backdropFilter: "blur(10px)" }}
-          value={body}
-          rows={8}
-          onChange={(event) => {
-            setBody(event.target.value);
-          }}
-        />
-      </fieldset>
+      <ExpandingTextarea
+        className={inputClassName}
+        name="body"
+        value={body}
+        setValue={setBody}
+        label="Body"
+      />
       <fieldset
         id="url-field"
         className="flex-column gap-8 squeeze-16 squish-0 full-width"

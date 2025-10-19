@@ -1,19 +1,19 @@
 import Link from "next/link";
-import {classes} from "@/utils";
+import { classes } from "@/utils";
 import Icon from "./icon";
-import type {CategoryType} from "@/types/CategoryTypes";
+import type { CategoryType } from "@/types/CategoryTypes";
 
 export default function HeaderCategories(
-  props: {categories: CategoryType[]; show: boolean} = {
+  props: { categories: CategoryType[]; show: boolean } = {
     categories: [],
     show: false,
-  }
+  },
 ) {
   if (props.show) {
     return (
       <section
         className={headerCategoriesClassName}
-        style={{top: 0, zIndex: "+2"}}
+        style={{ top: 0, zIndex: "+2" }}
       >
         <figure className="flex-row align-items-center gap-4">
           <Icon type="tags" />

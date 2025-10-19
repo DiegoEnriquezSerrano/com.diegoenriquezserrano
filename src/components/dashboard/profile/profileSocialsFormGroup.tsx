@@ -1,6 +1,6 @@
-import {Dispatch, SetStateAction} from "react";
+import { Dispatch, SetStateAction } from "react";
 import ProfileSocialInputField from "@/components/dashboard/profile/profileSocialInputField";
-import {classes} from "@/utils";
+import { classes } from "@/utils";
 
 export default function ProfileSocialsFormGroup({
   values,
@@ -12,7 +12,7 @@ export default function ProfileSocialsFormGroup({
   }[];
 }) {
   return (
-    <section className="full-width" style={{maxWidth: 800}}>
+    <section className="full-width" style={{ maxWidth: 800 }}>
       <div className={socialsClassName}>
         <h2 className="stack-16">Socials</h2>
         {values.map((value) => (

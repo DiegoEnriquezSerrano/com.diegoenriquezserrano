@@ -1,12 +1,12 @@
 "use client";
 
-import {classes, getResponsiveClasses} from "@/utils";
+import { classes, getResponsiveClasses } from "@/utils";
 import Link from "next/link";
 import Icon from "./icon";
-import {useMediaQuery} from "@/utils/clientUtils";
-import type {CategoryType} from "@/types/CategoryTypes";
+import { useMediaQuery } from "@/utils/clientUtils";
+import type { CategoryType } from "@/types/CategoryTypes";
 
-export default function CategoryRow(props: {category: CategoryType}) {
+export default function CategoryRow(props: { category: CategoryType }) {
   const isBreakpoint = useMediaQuery(799);
 
   return (
@@ -21,7 +21,7 @@ export default function CategoryRow(props: {category: CategoryType}) {
         </p>
         <p
           className="font-orbitron-light text-color-light dim-90 flash-100 transition-opacity-1"
-          style={{letterSpacing: ".05rem"}}
+          style={{ letterSpacing: ".05rem" }}
         >
           #{props.category.slug}
         </p>
@@ -29,10 +29,13 @@ export default function CategoryRow(props: {category: CategoryType}) {
       <div className="flex-column">
         <div
           className="display-grid gap-4 text-color-cyan"
-          style={{gridTemplateColumns: "1fr 1fr"}}
+          style={{ gridTemplateColumns: "1fr 1fr" }}
         >
           <figure className="flex-row">
-            <Icon type="article" opts={{height: "1.25rem", width: "1.25rem"}} />
+            <Icon
+              type="article"
+              opts={{ height: "1.25rem", width: "1.25rem" }}
+            />
           </figure>
           <p className="flex-row full-width justify-content-center">
             {props.category.post_count}

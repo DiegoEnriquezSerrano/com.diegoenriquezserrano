@@ -50,7 +50,7 @@ const flashMessageContainerClassName = classes([
   "drop-0",
   "flex-column",
   "flex-direction-column-reverse",
-  "font-orbitron-medium",
+  "font-orbitron",
   "font-weight-bold",
   "gap-8",
   "justify-content-center",

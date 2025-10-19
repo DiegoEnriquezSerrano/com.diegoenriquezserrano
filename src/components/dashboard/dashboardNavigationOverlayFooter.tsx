@@ -1,22 +1,22 @@
 import Icon from "@/components/icon";
-import type {CategoryType} from "@/types/CategoryTypes";
-import type {IconType} from "@/types/IconTypes";
-import type {ProfileType} from "@/types/UserTypes";
-import {classes} from "@/utils";
+import type { CategoryType } from "@/types/CategoryTypes";
+import type { IconType } from "@/types/IconTypes";
+import type { ProfileType } from "@/types/UserTypes";
+import { classes } from "@/utils";
 
 export default function DashboardNavFooter(props: {
-  links?: {path: string; label: string; icon: IconType}[];
+  links?: { path: string; label: string; icon: IconType }[];
   categories: CategoryType[];
   profile?: ProfileType;
 }) {
   return (
     <footer
       className={navFooterClassName}
-      style={{gridTemplateAreas: `"intro" "email" "links" "legal"`}}
+      style={{ gridTemplateAreas: `"intro" "email" "links" "legal"` }}
     >
       <div
         className="stack-48 squeeze-16 text-color-white"
-        style={{gridArea: "intro"}}
+        style={{ gridArea: "intro" }}
       >
         diegoenriquezserrano.com
       </div>
@@ -28,11 +28,11 @@ export default function DashboardNavFooter(props: {
           gridTemplateAreas: `"cats" "misc" "social"`,
         }}
       >
-        <div className={ulClassName} style={{gridArea: "cats"}}>
+        <div className={ulClassName} style={{ gridArea: "cats" }}>
           <p className="stack-16 text-large text-color-white">Categories</p>
           <ul
             className="display-grid gap-8"
-            style={{gridTemplateColumns: "1fr"}}
+            style={{ gridTemplateColumns: "1fr" }}
           >
             {props.categories?.map((category) => (
               <li key={category.slug}>
@@ -46,7 +46,7 @@ export default function DashboardNavFooter(props: {
             ))}
           </ul>
         </div>
-        <div className={ulClassName} style={{gridArea: "misc"}}>
+        <div className={ulClassName} style={{ gridArea: "misc" }}>
           <p className="stack-16 text-large text-color-white">General</p>
           <ul className="display-grid gap-8">
             {props.links?.map((link) => (
@@ -91,7 +91,7 @@ export default function DashboardNavFooter(props: {
       </div>
       <div
         className="stack-16 squeeze-16 text-color-white"
-        style={{gridArea: "legal"}}
+        style={{ gridArea: "legal" }}
       >
         <p>Diego Enriquez-Serrano.</p>
         <p>&copy; {new Date().getFullYear()} All Rights Reserved.</p>

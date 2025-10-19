@@ -69,7 +69,7 @@ const radioClassName = classes([
   "dim-80",
   "drop-0",
   "flash-100",
-  "font-orbitron-medium",
+  "font-orbitron",
   "grid",
   "pull-0",
   "push-0",

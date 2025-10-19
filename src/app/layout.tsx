@@ -1,7 +1,7 @@
 import "./globals.css";
 import FlashMessage from "@/components/flashMessage";
 import Stylesheet from "@/components/stylesheet";
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 
 export const metadata: Metadata = {
   title: "Diego Enriquez-Serrano",
@@ -13,7 +13,7 @@ const stylesheets = [
   "index",
   "background",
   "border",
-  "color",
+  "colors",
   "container",
   "font",
   "fx",
@@ -23,9 +23,9 @@ const stylesheets = [
   "position",
   "size",
   "text",
-  "orbitron",
-  "opensans-regular",
 ];
+
+const fonts = ["orbitron", "open-sans", "liberation-mono"];
 
 export default async function RootLayout({
   children,
@@ -33,12 +33,16 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const base: string | undefined = process.env.NEXT_PUBLIC_STYLES_BASE_URL;
+  const fontsBase: string | undefined = process.env.NEXT_PUBLIC_FONTS_BASE_URL;
 
   return (
     <html lang="en" className="max-width-view-100">
       <head>
         {stylesheets.map((sheet) => (
           <Stylesheet key={sheet} base={base} sheet={sheet} />
+        ))}
+        {fonts.map((sheet) => (
+          <Stylesheet key={sheet} base={fontsBase} sheet={sheet} />
         ))}
       </head>
       <body className="text-color-white surface-char max-width-view-100">

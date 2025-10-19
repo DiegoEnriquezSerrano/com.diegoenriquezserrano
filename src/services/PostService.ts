@@ -27,6 +27,22 @@ namespace PostService {
       return { json, response };
     }
 
+    export async function getDashboardPostDrafts(
+      args: ApiTypes.V1.RequestArguments,
+    ): Promise<PostsResponseType> {
+      const opts: ApiTypes.V1.RequestParams["opts"] = { data: args.params };
+
+      if (args.session) opts.bearer = args.session;
+
+      const { json, response } = await ApiService.V1.get<PostType[]>({
+        base: findApiTarget(),
+        path: "dashboard/post_drafts",
+        opts,
+      });
+
+      return { json, response };
+    }
+
     export async function getDashboardPost(
       slug: PostType["slug"],
       args: ApiTypes.V1.RequestArguments,

@@ -64,12 +64,12 @@ export default function BaseFooter() {
 }
 
 const baseFooterClassName = classes([
-    "align-items-center",
-    "border-color-gray",
-    "border-style-solid",
-    "border-width-0",
-    "full-height",
-    "full-width",
-    "gap-0",
-    "grid",
-  ]);
+  "align-items-center",
+  "border-color-gray",
+  "border-style-solid",
+  "border-width-0",
+  "full-height",
+  "full-width",
+  "gap-0",
+  "grid",
+]);

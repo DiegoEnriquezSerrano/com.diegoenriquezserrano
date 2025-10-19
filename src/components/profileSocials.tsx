@@ -1,15 +1,15 @@
-import {classes} from "@/utils";
+import { classes } from "@/utils";
 import Icon from "./icon";
-import type {ProfileType} from "@/types/UserTypes";
+import type { ProfileType } from "@/types/UserTypes";
 
-export default function ProfileSocials({profile}: {profile?: ProfileType}) {
+export default function ProfileSocials({ profile }: { profile?: ProfileType }) {
   return (
     <div className={socialsClassName}>
       <h2 className="stack-16">Connect with me!</h2>
       <a
         href={`https://bsky.app/profile/${profile?.bluesky}`}
         className="squeeze-4 squish-4 grid"
-        style={{gridTemplateColumns: "2rem 1fr"}}
+        style={{ gridTemplateColumns: "2rem 1fr" }}
         target="_blank"
       >
         <Icon type="bluesky" />
@@ -18,7 +18,7 @@ export default function ProfileSocials({profile}: {profile?: ProfileType}) {
       <a
         href={`https://github.com/${profile?.github}`}
         className="squeeze-4 squish-4 grid"
-        style={{gridTemplateColumns: "2rem 1fr"}}
+        style={{ gridTemplateColumns: "2rem 1fr" }}
         target="_blank"
       >
         <Icon type="github" />
@@ -27,7 +27,7 @@ export default function ProfileSocials({profile}: {profile?: ProfileType}) {
       <a
         href={`https://www.linkedin.com/in/${profile?.linkedin}`}
         className="squeeze-4 squish-4 grid"
-        style={{gridTemplateColumns: "2rem 1fr"}}
+        style={{ gridTemplateColumns: "2rem 1fr" }}
         target="_blank"
       >
         <Icon type="linkedin" />

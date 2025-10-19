@@ -10,6 +10,7 @@ import PostService from "@/services/PostService";
 
 // types
 import type { PostType } from "@/types/PostTypes";
+import Markdown from "react-markdown";
 
 export default async function PostsPage({
   params,
@@ -70,10 +71,10 @@ export default async function PostsPage({
           />
         </figure>
         <section
-          className="flex-column align-items-center justify-content-start full-width squeeze-24 white-space-pre-line line-height-large stack-64"
+          className="markdown flex-column align-items-stretch justify-content-start full-width squeeze-24 white-space-pre-line line-height-large stack-64"
           style={{ maxWidth: 800 }}
         >
-          {post?.body}
+          <Markdown>{post?.body}</Markdown>
         </section>
       </main>
     </BaseLayoutPageWrapper>

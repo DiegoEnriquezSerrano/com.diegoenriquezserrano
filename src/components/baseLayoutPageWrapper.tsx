@@ -48,7 +48,7 @@ export default async function BaseLayoutPageWrapper({
 
   return (
     <main
-      className="display-grid full-width height-view-100 overflow-hidden font-orbitron-medium"
+      className="display-grid full-width height-view-100 overflow-hidden font-orbitron"
       id="app"
     >
       <BaseHeader>
@@ -71,10 +71,10 @@ export default async function BaseLayoutPageWrapper({
         categories={categories}
         links={[
           { path: "/", label: "Home", icon: "home" },
-          { path: "/about", label: "About", icon: "contact" },
-          { path: "/projects", label: "Projects", icon: "git" },
-          { path: "/posts", label: "Posts", icon: "article" },
+          { path: "/about", label: "About", icon: "profile" },
           { path: "/categories", label: "Categories", icon: "tags" },
+          { path: "/posts", label: "Posts", icon: "article" },
+          { path: "/projects", label: "Projects", icon: "projects" },
         ]}
       />
     </main>

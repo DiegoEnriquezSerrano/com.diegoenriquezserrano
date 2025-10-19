@@ -190,7 +190,7 @@ const checkboxClassName = classes([
   "border-width-2",
   "custom-checkbox",
   "drop-0",
-  "font-orbitron-medium",
+  "font-orbitron",
   "grid",
   "pull-0",
   "push-0",

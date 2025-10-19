@@ -109,7 +109,7 @@ export default async function DashboardLayoutPageWrapper({
 
 const mainClassName = classes([
   "display-grid",
-  "font-orbitron-medium",
+  "font-orbitron",
   "full-width",
   "height-view-100",
   "overflow-hidden",
