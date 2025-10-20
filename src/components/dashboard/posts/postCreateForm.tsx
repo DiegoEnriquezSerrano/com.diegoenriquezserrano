@@ -37,6 +37,7 @@ export default function PostCreateForm({ categories }: PostCreateFormProps) {
       featured,
       title,
       categories: categoryIds.map(Number),
+      draft: true,
     };
 
     const request = await createDashboardPost({ params });
