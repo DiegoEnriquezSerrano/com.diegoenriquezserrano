@@ -21,6 +21,7 @@ export default async function DashboardProjectContent({
           action: {
             icon: "projectsUpdate",
             href: `/dashboard/projects/${project.slug}/edit`,
+            label: "Edit",
           },
         },
       }}

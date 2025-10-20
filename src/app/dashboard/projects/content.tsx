@@ -22,7 +22,11 @@ export default function DashboardProjectsContent({
       props={{
         header: {
           title: "Projects",
-          action: { icon: "projectsCreate", href: "/dashboard/projects/new" },
+          action: {
+            icon: "projectsCreate",
+            href: "/dashboard/projects/new",
+            label: "New",
+          },
         },
       }}
     >
