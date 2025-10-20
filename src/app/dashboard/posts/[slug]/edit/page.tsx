@@ -3,23 +3,23 @@
 import PostService from "@/services/PostService";
 import CategoryService from "@/services/CategoryService";
 import DashboardEditPost from "./content";
-import {getSessionCookie} from "@/utils/serverUtils";
+import { getSessionCookie } from "@/utils/serverUtils";
 
-const {getDashboardPost} = PostService.Api;
-const {getDashboardCategories} = CategoryService.Api;
+const { getDashboardPost } = PostService.Api;
+const { getDashboardCategories } = CategoryService.Api;
 
 export default async function DashboardCategories({
   params,
 }: {
-  params: Promise<{slug: string}>;
+  params: Promise<{ slug: string }>;
 }) {
-  const {slug} = await params;
+  const { slug } = await params;
   const session = await getSessionCookie();
 
   try {
     const [categoriesRequest, postRequest] = await Promise.all([
-      getDashboardCategories({session}),
-      getDashboardPost(slug, {session}),
+      getDashboardCategories({ session }),
+      getDashboardPost(slug, { session }),
     ]);
 
     const post = postRequest.response.ok ? postRequest.json : undefined;

@@ -17,8 +17,8 @@ export default function DashboardHeader({
 }) {
   return (
     <header
-      className="grid surface-char full-width full-height justify-content-space-between align-content-center"
-      style={{ gridArea: "baseheader", gridTemplateColumns: "1fr 5.5rem" }}
+      className="grid surface-char full-width full-height justify-content-space-between align-items-center"
+      style={{ gridArea: "baseheader", gridTemplateColumns: "1fr min-content" }}
       id="dashboard-header"
     >
       <div className={headerTitleClassName}>{children}</div>
@@ -33,8 +33,10 @@ export default function DashboardHeader({
                 width: "1.25rem",
               }}
             />
+            {!!action.label && (
+              <span className="text-small">{action.label}</span>
+            )}
           </Link>
-          {!!action.label && <span className="text-small">{action.label}</span>}
         </div>
       ) : (
         <div />
@@ -60,13 +62,14 @@ const headerActionLinkClassName = classes([
   "border-rounded-24",
   "border-style-outset",
   "border-width-1",
+  "align-items-center",
   "dim-80",
   "flash-100",
-  "justify-self-end",
+  "flex-row",
+  "gap-8",
   "raised-1",
   "squeeze-16",
   "squish-8",
   "surface-cyan",
   "text-color-black",
-  "flex-row",
 ]);

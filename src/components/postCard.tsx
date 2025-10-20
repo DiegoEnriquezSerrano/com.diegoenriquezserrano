@@ -18,34 +18,36 @@ export function PostCard(
   if (props.post) {
     return (
       <div className={headerClassName2}>
-        <Link
-          href={postLink}
-          className="flex-item full-width border-rounded-24 overflow-hidden stack-16"
-        >
-          <img src={props.post.cover_image_url} className="full-width" />
-        </Link>
-        <div className="flex-column gap-16 squish-16">
+        <div>
           <Link
-            className="line-height-extra-large text-extra-large stack-8 hover-decoration-none font-weight-400"
             href={postLink}
+            className="flex-item full-width border-rounded-24 overflow-hidden stack-16 flex-row"
           >
-            {props.post.title}
+            <img src={props.post.cover_image_url} className="full-width" />
           </Link>
-          <Link
-            className="line-height-large stack-8 hover-decoration-none font-weight-400"
-            href={postLink}
-          >
-            {props.post.excerpt}
-          </Link>
-          <div className="flex-row gap-8 full-width flex-item">
-            {props.post.categories.map((category) => (
-              <CategoryPill
-                key={category.id}
-                category={category}
-                dashboard={props.dashboard || false}
-              />
-            ))}
+          <div className="flex-column gap-16 squish-16">
+            <Link
+              className="line-height-extra-large text-extra-large stack-8 hover-decoration-none font-weight-400"
+              href={postLink}
+            >
+              {props.post.title}
+            </Link>
+            <Link
+              className="line-height-large stack-8 hover-decoration-none font-weight-400"
+              href={postLink}
+            >
+              {props.post.excerpt}
+            </Link>
           </div>
+        </div>
+        <div className="flex-row gap-8 full-width flex-item">
+          {props.post.categories.map((category) => (
+            <CategoryPill
+              key={category.id}
+              category={category}
+              dashboard={props.dashboard || false}
+            />
+          ))}
         </div>
       </div>
     );
