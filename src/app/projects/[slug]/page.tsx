@@ -1,5 +1,6 @@
 // externals
 import Link from "next/link";
+import Markdown from "react-markdown";
 
 // components
 import BaseLayoutPageWrapper from "@/components/baseLayoutPageWrapper";
@@ -10,13 +11,14 @@ import ProjectService from "@/services/ProjectService";
 
 // types
 import type { ProjectType } from "@/types/ProjectTypes";
-import Markdown from "react-markdown";
 
 export default async function ProjectsPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
+
   let project: ProjectType | undefined;
 
   const { getProjectByUsernameAndSlug } = ProjectService.Api;
@@ -26,7 +28,7 @@ export default async function ProjectsPage({
       getProjectByUsernameAndSlug(
         {
           username: String(process.env.NEXT_PUBLIC_PRIMARY_USERNAME),
-          slug: params.slug,
+          slug,
         },
         {},
       ),
