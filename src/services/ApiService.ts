@@ -123,6 +123,21 @@ namespace ApiService {
         path,
       });
     }
+
+    export function patch<T>(
+      params: ApiTypes.V1.RequestParams,
+    ): Promise<{ json: T; response: Response }> {
+      const { base, path, opts } = params;
+
+      return send({
+        base,
+        bearer: opts?.bearer,
+        credentials: opts?.credentials,
+        data: opts?.data,
+        method: "PATCH",
+        path,
+      });
+    }
   }
 }
 
