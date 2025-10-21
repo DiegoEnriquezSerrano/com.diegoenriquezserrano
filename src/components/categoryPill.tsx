@@ -6,6 +6,9 @@ export function CategoryPill(props: {
   category: CategoryType;
   dashboard: boolean;
 }) {
+  let href = props.dashboard
+    ? `/dashboard/categories/${props.category.slug}`
+    : `/categories/${props.category.slug}`;
   return (
     <Link
       className={classes([
@@ -22,7 +25,7 @@ export function CategoryPill(props: {
         "text-color-turquoise",
         "text-small",
       ])}
-      href={`/categories/${props.category.slug}`}
+      href={href}
       key={props.category.id}
     >
       {props.category.name}
