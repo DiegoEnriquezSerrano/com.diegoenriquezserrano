@@ -16,7 +16,11 @@ export default function DashboardPostsContent(props: { posts: PostType[] }) {
       props={{
         header: {
           title: "Posts",
-          action: { icon: "articleNew", href: "/dashboard/posts/new" },
+          action: {
+            icon: "articleNew",
+            href: "/dashboard/posts/new",
+            label: "New",
+          },
         },
       }}
     >

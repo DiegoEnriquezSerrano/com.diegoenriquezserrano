@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Markdown from "react-markdown";
 import DashboardLayoutPageWrapper from "@/components/dashboard/dashboardLayoutPage";
 import DashboardHeaderStickyLinks from "@/components/dashboard/dashboardHeaderStickyLinks";
+import DraftHeader from "@/components/dashboard/posts/draftHeader";
 import type { PostType } from "@/types/PostTypes";
-import Markdown from "react-markdown";
 
 type PostPageProps = { post: PostType };
 
@@ -15,6 +15,7 @@ export default async function DashboardPostContent({ post }: PostPageProps) {
           action: {
             icon: "articleEdit",
             href: `/dashboard/posts/${post.slug}/edit`,
+            label: "Edit",
           },
         },
       }}
@@ -24,6 +25,7 @@ export default async function DashboardPostContent({ post }: PostPageProps) {
           <span></span>
         </section>
       </DashboardHeaderStickyLinks>
+      <DraftHeader post={post} />
       <main
         className="display-flex flex-column align-items-center full-width squish-24"
         style={{ gridRowStart: 2 }}

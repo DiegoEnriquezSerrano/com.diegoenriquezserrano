@@ -10,13 +10,19 @@ import DashboardHeaderStickyLinks from "@/components/dashboard/dashboardHeaderSt
 // types
 import type { PostType } from "@/types/PostTypes";
 
-export default function DashboardPostDraftsContent(props: { posts: PostType[] }) {
+export default function DashboardPostDraftsContent(props: {
+  posts: PostType[];
+}) {
   return (
     <DashboardLayoutPageWrapper
       props={{
         header: {
           title: "Drafts",
-          action: { icon: "articleNew", href: "/dashboard/posts/new" },
+          action: {
+            icon: "articleNew",
+            href: "/dashboard/posts/new",
+            label: "New",
+          },
         },
       }}
     >

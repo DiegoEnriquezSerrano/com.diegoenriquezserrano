@@ -1,5 +1,6 @@
 // externals
 import Link from "next/link";
+import Markdown from "react-markdown";
 
 // components
 import BaseLayoutPageWrapper from "@/components/baseLayoutPageWrapper";
@@ -10,7 +11,6 @@ import PostService from "@/services/PostService";
 
 // types
 import type { PostType } from "@/types/PostTypes";
-import Markdown from "react-markdown";
 
 export default async function PostsPage({
   params,
