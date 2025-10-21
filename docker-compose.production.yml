@@ -1,0 +1,24 @@
+services:
+  nextjs:
+    build:
+      dockerfile: Dockerfile.prod
+    env_file: .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nextjs.rule=Host(`diegoenriquezserrano.com`)"
+      - "traefik.http.routers.nextjs.entrypoints=websecure"
+      - "traefik.http.routers.nextjs.tls.certResolver=letsencrypt"
+      - "traefik.http.services.nextjs.loadbalancer.server.port=3035"
+    networks:
+      - dokploy-network
+    ports:
+      - 3035
+    restart: on-failure
+    volumes:
+      - nextjs_cache:/app/.next
+      - .:/app
+volumes:
+  nextjs_cache:
+networks:
+  dokploy-network:
+    external: true
