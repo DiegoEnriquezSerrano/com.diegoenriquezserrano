@@ -5,10 +5,10 @@ services:
     env_file: .env
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nextjs.rule=Host(`diegoenriquezserrano.com`)"
-      - "traefik.http.routers.nextjs.entrypoints=websecure"
-      - "traefik.http.routers.nextjs.tls.certResolver=letsencrypt"
-      - "traefik.http.services.nextjs.loadbalancer.server.port=3035"
+      - "traefik.http.routers.next-client.rule=Host(`diegoenriquezserrano.com`)"
+      - "traefik.http.routers.next-client.entrypoints=websecure"
+      - "traefik.http.routers.next-client.tls.certResolver=letsencrypt"
+      - "traefik.http.services.next-client.loadbalancer.server.port=3035"
     networks:
       - dokploy-network
     ports:
