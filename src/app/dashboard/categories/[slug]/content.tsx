@@ -22,6 +22,7 @@ export default async function DashboardCategoryContent({
           action: {
             href: `/dashboard/categories/${category.slug}/edit`,
             icon: "categoriesUpdate",
+            label: "Edit",
           },
         },
       }}

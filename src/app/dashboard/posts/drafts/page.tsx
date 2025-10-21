@@ -15,7 +15,9 @@ export default async function Dashboardposts() {
   const session = await getSessionCookie();
 
   try {
-    const [postsRequest] = await Promise.all([getDashboardPostDrafts({ session })]);
+    const [postsRequest] = await Promise.all([
+      getDashboardPostDrafts({ session }),
+    ]);
 
     const posts = postsRequest.response.ok ? postsRequest.json : [];
 

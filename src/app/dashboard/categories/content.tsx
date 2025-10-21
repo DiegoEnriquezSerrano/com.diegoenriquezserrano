@@ -20,6 +20,7 @@ export default function DashboardCategoriesContent(props: {
           action: {
             href: "/dashboard/categories/new",
             icon: "categoriesCreate",
+            label: "New",
           },
         },
       }}

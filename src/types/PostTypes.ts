@@ -11,6 +11,7 @@ export type PostType = {
   last_modified: string;
   slug: string;
   title: string;
+  draft: boolean;
 };
 
 export type PostsResponseType = {

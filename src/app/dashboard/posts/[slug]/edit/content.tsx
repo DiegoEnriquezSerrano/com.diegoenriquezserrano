@@ -22,15 +22,17 @@ export default function DashboardEditPost({
       }}
     >
       <DashboardHeaderStickyLinks>
-        <figure className="flex-row align-items-center gap-4">
-          <Icon type="article" opts={{ height: "1rem", width: "1rem" }} />
-        </figure>
-        <Link href={`/dashboard/posts`} className="text-color-white">
-          Published
-        </Link>
-        <Link href={`/dashboard/posts/drafts`} className="text-color-cyan">
-          Drafts
-        </Link>
+        <section className="flex-row gap-16 align-items-center squish-8">
+          <figure className="flex-row align-items-center gap-4">
+            <Icon type="article" opts={{ height: "1rem", width: "1rem" }} />
+          </figure>
+          <Link href={`/dashboard/posts`} className="text-color-white">
+            Published
+          </Link>
+          <Link href={`/dashboard/posts/drafts`} className="text-color-cyan">
+            Drafts
+          </Link>
+        </section>
       </DashboardHeaderStickyLinks>
       <main className="flex-column squish-24 gap-24 align-items-center justify-content-start font-orbitron">
         <PostEditForm post={post} categories={categories} />

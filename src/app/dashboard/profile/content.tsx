@@ -19,6 +19,7 @@ export default async function DashboardProfileContent({
           action: {
             icon: "profileEdit",
             href: "/dashboard/profile/edit",
+            label: "Edit",
           },
         },
       }}

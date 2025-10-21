@@ -1,7 +1,7 @@
 import "./globals.css";
 import FlashMessage from "@/components/flashMessage";
 import Stylesheet from "@/components/stylesheet";
-import type {Metadata} from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Diego Enriquez-Serrano",

@@ -99,6 +99,25 @@ namespace PostService {
       return { json, response };
     }
 
+    export async function patchDashboardPost(
+      slug: PostType["slug"],
+      args: ApiTypes.V1.RequestArguments,
+    ): Promise<PostResponseType> {
+      const opts: ApiTypes.V1.RequestParams["opts"] = {
+        data: args?.params || undefined,
+      };
+
+      if (args.session) opts.bearer = args.session;
+
+      const { json, response } = await ApiService.V1.patch<PostType>({
+        base: findApiTarget(),
+        path: `dashboard/posts/${slug}`,
+        opts,
+      });
+
+      return { json, response };
+    }
+
     export async function destroyDashboardPost(
       slug: PostType["slug"],
       args: ApiTypes.V1.RequestArguments,

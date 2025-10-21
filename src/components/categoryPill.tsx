@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CategoryPillStyles from "./styleSets/categoryPillStyles";
+import { classes } from "@/utils";
 import type { CategoryType } from "@/types/CategoryTypes";
 
 export function CategoryPill(props: {
@@ -8,7 +8,20 @@ export function CategoryPill(props: {
 }) {
   return (
     <Link
-      className={CategoryPillStyles.spanClasses}
+      className={classes([
+        "align-self-end",
+        "border-color-cyan-semi-transparent",
+        "border-rounded-16",
+        "border-style-solid",
+        "border-width-1",
+        "display-inline-block",
+        "hover-decoration-none",
+        "squeeze-16",
+        "squish-8",
+        "surface-char-semi-transparent",
+        "text-color-turquoise",
+        "text-small",
+      ])}
       href={`/categories/${props.category.slug}`}
       key={props.category.id}
     >

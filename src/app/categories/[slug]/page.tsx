@@ -20,8 +20,9 @@ const { getCategoryByUsernameAndSlug } = CategoryService.Api;
 export default async function PostsPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const username: string = process.env.NEXT_PUBLIC_PRIMARY_USERNAME || "";
 
   let posts: PostType[] = [];
@@ -29,8 +30,8 @@ export default async function PostsPage({
 
   try {
     const [postsRequest, categoryRequest] = await Promise.all([
-      getPostsByCategoryAndUsername({ username, category: params.slug }, {}),
-      getCategoryByUsernameAndSlug({ username, slug: params.slug }, {}),
+      getPostsByCategoryAndUsername({ username, category: slug }, {}),
+      getCategoryByUsernameAndSlug({ username, slug }, {}),
     ]);
 
     if (postsRequest.response.ok) posts = postsRequest.json;
