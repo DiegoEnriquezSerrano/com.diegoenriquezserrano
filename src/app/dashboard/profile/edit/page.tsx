@@ -1,7 +1,7 @@
 "use server";
 
-// externals
-import { cookies } from "next/headers";
+// utils
+import { getSessionCookie } from "@/utils/serverUtils";
 
 // services
 import UserService from "@/services/UserService";
@@ -9,25 +9,16 @@ import UserService from "@/services/UserService";
 // components
 import DashboardProfileEditContent from "@/app/dashboard/profile/edit/content";
 
-// types
-import type { ProfileType } from "@/types/UserTypes";
-
 const { getDashboardProfile } = UserService.Api;
 
 export default async function DashboardProfile() {
-  const cookieStore = await cookies();
-  const accessToken = process.env.VITE_JWT_COOKIE_NAME
-    ? cookieStore.get(process.env.VITE_JWT_COOKIE_NAME)
-    : null;
+  const session = await getSessionCookie();
 
-  let profile: ProfileType;
-
-  console.log("at profile dit");
   try {
-    const request = await getDashboardProfile({ session: accessToken?.value });
+    const request = await getDashboardProfile({ session });
 
     if (request.response.ok) {
-      profile = request.json;
+      const profile = request.json;
 
       if (process.env.VITE_DEBUG) {
         console.log("profile: ", profile);
