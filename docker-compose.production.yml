@@ -13,12 +13,7 @@ services:
       - dokploy-network
     ports:
       - 3035
-    restart: on-failure
-    volumes:
-      - nextjs_cache:/app/.next
-      - .:/app
-volumes:
-  nextjs_cache:
+    restart: always
 networks:
   dokploy-network:
     external: true
