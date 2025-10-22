@@ -136,6 +136,11 @@ input[type="radio"].custom-radio:focus {
   max-width: 1000px;
 }
 
+.open [data-modal-content="small"] {
+  max-width: 600px;
+  height: 50%;
+}
+
 [data-redo-button][disabled] {
   color: var(--color-gray) !important;
 }
@@ -225,9 +230,15 @@ input[type="radio"].custom-radio:focus {
   }
 
   .open [data-modal-content] {
-    height: unset;
-    box-shadow: 0 0.4rem 0.8rem -0.09rem rgba(0, 0, 0, var(--percentage-100));
     border-radius: var(--spacing-16) var(--spacing-16) 0 0;
+    box-shadow: 0 0.4rem 0.8rem -0.09rem rgba(0, 0, 0, var(--percentage-100));
+    height: unset;
+    max-width: unset;
+  }
+
+  .open [data-modal-content="small"] {
+    border-radius: var(--spacing-16);
+    height: min-content;
   }
 }
 
