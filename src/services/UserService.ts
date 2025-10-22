@@ -55,6 +55,38 @@ namespace UserService {
 
       return { json, response };
     }
+
+    export async function patchProfile(
+      args: ApiTypes.V1.RequestArguments,
+    ): Promise<{ json: ProfileType; response: Response }> {
+      const opts: ApiTypes.V1.RequestParams["opts"] = {
+        data: args?.params || undefined,
+      };
+
+      const { json, response } = await ApiService.V1.patch<ProfileType>({
+        base: findApiTarget(),
+        path: `dashboard/profile`,
+        opts,
+      });
+
+      return { json, response };
+    }
+
+    export async function putProfile(
+      args: ApiTypes.V1.RequestArguments,
+    ): Promise<{ json: ProfileType; response: Response }> {
+      const opts: ApiTypes.V1.RequestParams["opts"] = {
+        data: args?.params || undefined,
+      };
+
+      const { json, response } = await ApiService.V1.put<ProfileType>({
+        base: findApiTarget(),
+        path: `dashboard/profile`,
+        opts,
+      });
+
+      return { json, response };
+    }
   }
 }
 
