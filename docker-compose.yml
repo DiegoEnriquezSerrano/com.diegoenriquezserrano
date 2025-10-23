@@ -1,21 +1,16 @@
 services:
   nextjs:
-    restart: on-failure
     build:
-      context: .
       dockerfile: Dockerfile.dev
+    env_file: .env.docker
+    networks:
+      - diegoenriquezserrano_net
+    ports:
+      - "3035:3035"
+    restart: on-failure
     volumes:
       - nextjs_cache:/app/.next
       - .:/app
-    command: npm run dev
-    ports:
-      - "3035:3035"
-    env_file:
-      - .env.docker
-    environment:
-      NODE_ENV: development
-    networks:
-      - diegoenriquezserrano_net
 volumes:
   nextjs_cache:
 networks:
