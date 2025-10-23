@@ -6,6 +6,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.next-client.rule=Host(`diegoenriquezserrano.com`)"
+      - "traefik.http.routers.next-client.rule=Host(`www.diegoenriquezserrano.com`)"
       - "traefik.http.routers.next-client.entrypoints=websecure"
       - "traefik.http.routers.next-client.tls.certResolver=letsencrypt"
       - "traefik.http.services.next-client.loadbalancer.server.port=3035"
