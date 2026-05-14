@@ -1,3 +1,8 @@
+> [!WARNING]
+> This repository will become inactive as of May 14, 2026.
+> Future project maintenance will be tracked [here](https://codeberg.org/diegoenriquezserrano/com.diegoenriquezserrano)
+
+
 # com.diegoenriquezserrano
 
 A PWA for a multi-tenant blog built with Next.js and TypeScript that allows multiple users to create, manage, and subscribe to newsletters via a separate authorized API server application. Users can manage their newsletters and subscribers. Includes support for registered user subscriptions as well as unregistered subscribers. User registrations and unregistered subscriptions require confirmed receipt of emailed timestamped signed tokens for activation. The API supports token-based authentication.
